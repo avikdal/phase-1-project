@@ -5,38 +5,14 @@
     <title>Phase 1 Project</title>
 </head>
 <body>
-    <div class="big-container">
-        <div id="opening-page">
-          <h1>My Little Library</h1>
-          <div id="opening-quote">
-            <h3>"Books are uniquely portable magic"</h3>
-            <h4>-Stephen King</h4>
-           <button id="opening-page-button">Find Books</button>
-         </div>
-        </div>
-        <div id="home-page">
-          <h1>My Little Library</h1>
-          <ul id="home-page-nav-bar">
-            <li class="home-page-nav-list">Browse
-              <select>
-                <option value=""></option>
-                <option value="Subject">Subject</option>
-                <option value="Collection">Collection</option>
-              </select>
-            </li>
-            <li class="home-page-nav-list">Search
-              <form class="find-a-book-form">
-                <input
-                  type="text"
-                  name="name"
-                  value=""
-                  placeholder="Search..."
-                  class="input-text"
-                />
-              </form>
-            </li>
-            <li class="home-page-nav-list">My Books</li>
-          </ul>
+    <div id="opening-page" class="big-container">
+        <h1>My Little Library</h1>
+        <div id="opening-quote">
+          <h3>"Books are uniquely portable magic"</h3>
+          <h4>-Stephen King</h4>
+         <form action="./home.html">
+          <button id="opening-page-button">Find Books</button>
+         </form>
         </div>
         <button class="unhide">unhide</button>
         <button class="hide">hide</button>
