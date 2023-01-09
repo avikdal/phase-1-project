@@ -67,21 +67,23 @@ function makeBook(obj){
     }
 
     let bookCard = document.createElement('div')
+    bookCard.setAttribute('class', 'book-card')
     let h2 = document.createElement('h2')
     let coverDiv = document.createElement('div')
+    coverDiv.setAttribute('class', 'book-covers-div')
     let img = document.createElement('img')
+    img.setAttribute('class','book-covers')
     let h4 = document.createElement('h4')
-    let btn = document.createElement('button')
     let bookId = obj.id
+    let btn = document.createElement('button')
+    btn.setAttribute('class', 'like-btn')
+    btn.setAttribute('id', `${bookId}`)
 
     h2.innerHTML = `Title: ${book.title}`
     h4.innerHTML = `Author: ${book.author}`
-    btn.setAttribute('class', 'like-btn')
-    btn.setAttribute('id', `${bookId}`)
     btn.innerHTML = `Add ${book.title} to My Books`
-    coverDiv.setAttribute('class', 'book-covers-div')
     img.src = book.cover
-    img.setAttribute('class','book-covers')
+    
 
     // console.log(obj)
     // let title = obj.title
@@ -92,7 +94,7 @@ function makeBook(obj){
     // console.log("author", author)
 
     coverDiv.append(img)
-    bookCard.append(h2, h4, btn, coverDiv)
+    bookCard.append(h2, h4, coverDiv, btn)
     browseResult.append(bookCard)
 }
 

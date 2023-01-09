@@ -47,7 +47,16 @@ h1 {
   display: inline;
 }
 
-#browse-result {
-  padding-left: 100px;
-  padding-right: 100px;
+.book-card {
+  padding-top: 10px;
+  padding-left: 200px;
+}
+
+.book-covers-div {
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.book-covers {
+  width: 500px
 }
