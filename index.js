@@ -13,6 +13,8 @@ let browseBar = document.querySelector("#browse-options")
 let browseTLOTR = document.querySelector("#TLOTR")
 let browseResult = document.querySelector("#browse-result")
 let harryPotterFetch = fetch('https://legacy--api.herokuapp.com/api/v1/books')
+let myBooksList = document.querySelector("#my-books-list")
+let myBooksContainer = document.querySelector("#my-books-container")
 
 // let fetchTLOTR = fetch('http://openlibrary.org/search.json?title=the+lord+of+the+rings')
 
@@ -30,11 +32,11 @@ let harryPotterFetch = fetch('https://legacy--api.herokuapp.com/api/v1/books')
 // }))
 
 
-openingPageButton.addEventListener('mouseover', unhide)
+openingPageButton.addEventListener('click', unhideHome)
 
 browseBar.addEventListener('change', (e) => {
     e.preventDefault();
-    console.log("this is the event", e)
+    // console.log("this is the event", e)
 
     bigContainer.classList.add("hidden")
     homePage.classList.add("hidden")
@@ -42,7 +44,7 @@ browseBar.addEventListener('change', (e) => {
     browseResult.textContent = `You picked ${e.target.value}`
 
     harryPotterFetch.then((response) => response.json()).then((data) => {
-        console.log("this is HPfetch", data)
+        // console.log("this is HPfetch", data)
         let HPArray = data
         HPArray.forEach(makeBook)
     }).catch((error) => { alert("whoops, try again");
@@ -51,7 +53,9 @@ browseBar.addEventListener('change', (e) => {
     
 })
 
-function unhide(e){
+myBooksList.addEventListener('click',)
+
+function unhideHome(e){
     e.preventDefault()
     homePage.classList.remove("hidden")
     openingPage.classList.add("hidden")
@@ -59,7 +63,7 @@ function unhide(e){
 
 
 function makeBook(obj){
-    console.log("this is the makeBook cb", obj)
+    // console.log("this is the makeBook cb", obj)
     let book = {
         cover: obj.image_url,
         title: obj.title,
@@ -78,6 +82,7 @@ function makeBook(obj){
     let btn = document.createElement('button')
     btn.setAttribute('class', 'like-btn')
     btn.setAttribute('id', `${bookId}`)
+    btn.addEventListener('click', addToMyBooks)
 
     h2.innerHTML = `Title: ${book.title}`
     h4.innerHTML = `Author: ${book.author}`
@@ -98,6 +103,13 @@ function makeBook(obj){
     browseResult.append(bookCard)
 }
 
+function addToMyBooks(e){
+    console.log("this is the event", e)
+    let likedBookCard = e.path[1]
+    console.log("this is the likedBookCard", likedBookCard)
+
+    myBooksContainer.append(likedBookCard)
+}
 
 
 
