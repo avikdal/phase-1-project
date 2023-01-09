@@ -21,6 +21,19 @@ h1 {
   color: rgb(0, 140, 255);
 }
 
+h3 {
+  color: forestgreen;
+  font-family: cursive;
+  padding-top: 75px;
+}
+
+#opening-page-form {
+  font-size: xx-large;
+  font-weight: bolder;
+  color: crimson;
+  padding-top: 75px;
+}
+
 .hidden {
   display: none;
 }
