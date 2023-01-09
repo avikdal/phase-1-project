@@ -5,18 +5,46 @@
     <title>Phase 1 Project</title>
 </head>
 <body>
-    <div id="opening-page" class="big-container">
+    <div class="big-container">
+      <div id="opening-page">
         <h1>My Little Library</h1>
         <div id="opening-quote">
           <h3>"Books are uniquely portable magic"</h3>
           <h4>-Stephen King</h4>
-         <form action="./home.html">
+         <form>
           <button id="opening-page-button">Find Books</button>
          </form>
         </div>
-        <button class="unhide">unhide</button>
-        <button class="hide">hide</button>
+        <!-- <button class="unhide">unhide</button>
+        <button class="hide">hide</button> -->
+      </div>
+        <div id="home-page" class="hidden">
+          <h1>My Little Library</h1>
+          <ul id="home-page-nav-bar">
+              <li class="home-page-nav-list">Browse
+                  <select id="browse-options">
+                   <option value=""></option>
+                   <option value="HarryPotter" id="harryPotter">Harry Pottter</option>
+                   <option value="StarWars" id="StarWars">Star Wars</option>
+                  </select>
+              </li>
+              <li class="home-page-nav-list">Search
+                  <form class="find-a-book-form">
+                      <input
+                          type="text"
+                          name="name"
+                          value=""
+                          placeholder="Search..."
+                          class="input-text"
+                      />
+                  </form>
+              </li>
+              <li class="home-page-nav-list">My Books</li>
+          </ul>
+      </div>
+      <!-- <div id="browse-result" class="hidden"></div> -->
     </div>
+    <div id="browse-result" class="hidden"></div>
 
 
     <script type="text/javascript" src="index.js"></script>
