@@ -12,7 +12,7 @@
           <h3>"Books are uniquely portable magic"</h3>
           <h4>-Stephen King</h4>
          <form>
-          <button id="opening-page-button">Find Books</button>
+          <div id="opening-page-btn">Find Books</div>
          </form>
         </div>
         <!-- <button class="unhide">unhide</button>
@@ -20,33 +20,49 @@
       </div>
         <div id="home-page" class="hidden">
           <h1>My Little Library</h1>
-          <ul id="home-page-nav-bar">
-            <li id="home-page">Home</li>
-            <li class="home-page-nav-list">Browse
-                  <select id="browse-options">
+          <ul class="home-page-nav-bar">
+            <div class="home-page-nav-list">Browse
+                  <select class="browse-options">
                    <option value=""></option>
-                   <option value="HarryPotter" id="harryPotter">Harry Potter</option>
-                   <!-- <option value="StarWars" id="StarWars">Star Wars</option> -->
+                   <option value="HarryPotter" class="harryPotter">Harry Potter</option>
                   </select>
-            </li>
-              <!-- <li class="home-page-nav-list">Search
-                  <form class="find-a-book-form">
-                      <input
-                          type="text"
-                          name="name"
-                          value=""
-                          placeholder="Search..."
-                          class="input-text"
-                      />
-                  </form>
-              </li> -->
-            <li id="my-books-list" class="home-page-nav-list">My Books</li>
+                </div>
+            <div class="my-books-list-1">
+              <button class="my-books-list-1">My Books</button>
+            </div>
           </ul>
       </div>
-      <!-- <div id="browse-result" class="hidden"></div> -->
     </div>
-    <div id="browse-result" class="hidden"></div>
-    <div id="my-books-container" class="hidden"></div>
+    <div id="browse-result" class="hidden">
+        <ul class="browse-page-nav-bar">
+            <div class="home-page">
+                <button id="browse-to-home">Home</button>
+            </div>
+            <!-- <div class="home-page-nav-list">Browse
+                  <select class="browse-options">
+                   <option value=""></option>
+                   <option value="HarryPotter" class="harryPotter">Harry Potter</option>
+                  </select>
+                </div> -->
+            <div class="my-books-list-2">
+              <button id="browse-to-my-books">My Books</button>
+            </div>
+          </ul>
+    </div>
+    <div id="my-books-container" class="hidden">
+        <ul class="my-books-page-nav-bar">
+            <div class="home-page">
+              <button id="books-to-home">Home</button>
+            </div>
+            <!-- <div class="home-page-nav-list">Browse
+                  <select class="browse-options">
+                   <option value=""></option>
+                   <option value="HarryPotter" class="harryPotter">Harry Potter</option>
+                  </select>
+                </div> -->
+            <!-- <div class="my-books-list-3">My Books</div> -->
+          </ul>
+    </div>
 
     <script type="text/javascript" src="index.js"></script>
 </body>

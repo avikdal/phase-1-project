@@ -37,19 +37,40 @@ h1 {
   padding-top: 50px;
 } */
 
-.home-page-nav-list {
-  display: inline;
+.home-page-nav-bar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   color: black;
   padding-inline-start: 5vw;
 }
 
-.find-a-book-form {
+.browse-page-nav-bar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: black;
+  padding-inline-start: 5vw;
+}
+
+.my-books-page-nav-bar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: black;
+  padding-inline-start: 5vw;
+}
+
+.home-page-nav-list {
   display: inline;
+  color: black;
+  padding-inline-start: 5vw;
+  padding-inline-end: 5vw;
 }
 
 .book-card {
   padding-top: 10px;
-  padding-left: 200px;
+  padding-left: 400px;
 }
 
 .book-covers-div {

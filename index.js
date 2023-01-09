@@ -1,39 +1,21 @@
-// let hidebtn = document.querySelector(".hide")
-// let unhidebtn = document.querySelector(".unhide")
-// hidebtn.addEventListener('click', hide)
-// function hide(){
-//     findABookForm.classList.add("hidden")
-// }
 let bigContainer = document.querySelector(".big-container")
-let findABookForm = document.querySelector(".find-a-book-form")
-let openingPageButton = document.querySelector("#opening-page-button")
-let homePage = document.querySelector("#home-page")
 let openingPage = document.querySelector("#opening-page")
-let navBar = document.querySelector("#home-page-nav-bar")
-let browseBar = document.querySelector("#browse-options")
-let browseTLOTR = document.querySelector("#TLOTR")
+let openingPageMouseOver = document.querySelector("#opening-page-btn")
+let homePage = document.querySelector("#home-page")
+let homeNavBar = document.querySelector(".home-page-nav-bar")
+let browseNavBar = document.querySelector(".browse-page-nav-bar")
+let myBooksNavBar = document.querySelector(".my-books-page-nav-bar")
+let browseBar = document.querySelector(".browse-options")
 let browseResult = document.querySelector("#browse-result")
 let harryPotterFetch = fetch('https://legacy--api.herokuapp.com/api/v1/books')
-let myBooksList = document.querySelector("#my-books-list")
+let myBooksList1 = document.querySelector(".my-books-list-1")
 let myBooksContainer = document.querySelector("#my-books-container")
+let browseToHomeBtn = document.querySelector("#browse-to-home")
+let booksToHomeBtn = document.querySelector("#books-to-home")
+let browseToMyBooks = document.querySelector("#browse-to-my-books")
 
-// let fetchTLOTR = fetch('http://openlibrary.org/search.json?title=the+lord+of+the+rings')
+openingPageMouseOver.addEventListener('mouseover', unhideHome)
 
-// let fetchStarWars = fetch('http://openlibrary.org/search/authors.json?q=star+wars').then((response) => response.json().then((data) => console.log("this is star wars", data)))
-
-// let tolkienFetch= fetch('http://openlibrary.org/search/authors.json?q=j+r+r+tolkien').then((response) => response.json().then((data) => { 
-//     console.log("this is a tolkien fetch", data)
-//     let tolkienDataArray = data.docs
-//     tolkienDataArray.forEach(tolkienObj => {
-//         let tolkienObjs = tolkienObj
-//         let author = tolkienObjs.name
-//         console.log("this is author", author)
-//     })
-//     console.log("this is tolkienDataArray", tolkienDataArray)
-// }))
-
-
-openingPageButton.addEventListener('click', unhideHome)
 
 browseBar.addEventListener('change', (e) => {
     e.preventDefault();
@@ -42,7 +24,6 @@ browseBar.addEventListener('change', (e) => {
     bigContainer.classList.add("hidden")
     homePage.classList.add("hidden")
     browseResult.classList.remove("hidden")
-    browseResult.textContent = `You picked ${e.target.value}`
 
     harryPotterFetch.then((response) => response.json()).then((data) => {
         // console.log("this is HPfetch", data)
@@ -51,15 +32,36 @@ browseBar.addEventListener('change', (e) => {
     }).catch((error) => { alert("whoops, try again");
     document.querySelector('body').append(error.message);
     })
-    
+    //how do i reset my browse bar drop down
 })
 
-myBooksList.addEventListener('mouseover', goToBookList)
+myBooksList1.addEventListener('click', unhideMyBooks)
+
+browseToHomeBtn.addEventListener('click', goBackHome)
+browseToMyBooks.addEventListener('click', unhideMyBooks)
+booksToHomeBtn.addEventListener('click', goBackHome)
 
 function unhideHome(e){
     e.preventDefault()
     homePage.classList.remove("hidden")
     openingPage.classList.add("hidden")
+}
+
+function goBackHome(e){
+    e.preventDefault()
+    homePage.classList.remove("hidden")
+    browseResult.classList.add("hidden")
+    bigContainer.classList.remove("hidden")
+}
+
+function unhideMyBooks(e){
+    e.preventDefault();
+    // openingPage.classList.add("hidden")
+    homePage.classList.add("hidden")
+    myBooksContainer.classList.remove("hidden")
+    // myBooksContainer.textContent += "Looks like you should add some books"
+    bigContainer.classList.add("hidden")
+    browseResult.classList.add("hidden")
 }
 
 function makeBook(obj){
@@ -90,14 +92,6 @@ function makeBook(obj){
     img.src = book.cover
     
 
-    // console.log(obj)
-    // let title = obj.title
-    // console.log("title", title)
-    // let cover = obj.image_url
-    // console.log("cover", cover)
-    // let author = obj.artists[0].author.name
-    // console.log("author", author)
-
     coverDiv.append(img)
     bookCard.append(h2, h4, coverDiv, btn)
     browseResult.append(bookCard)
@@ -112,11 +106,30 @@ function addToMyBooks(e){
 }
 
 
+// let hidebtn = document.querySelector(".hide")
+// let unhidebtn = document.querySelector(".unhide")
+// hidebtn.addEventListener('click', hide)
+// function hide(){
+//     findABookForm.classList.add("hidden")
+// }
 
 // manipulate form input to add + for everyspace and then fetch data based 
 // findABookForm.addEventListener('submit', (e) => {
 //     e.preventDefault();
 //     fetch()
-
 // })
 
+// let fetchTLOTR = fetch('http://openlibrary.org/search.json?title=the+lord+of+the+rings')
+
+// let fetchStarWars = fetch('http://openlibrary.org/search/authors.json?q=star+wars').then((response) => response.json().then((data) => console.log("this is star wars", data)))
+//let browseTLOTR = document.querySelector("#TLOTR")
+// let tolkienFetch= fetch('http://openlibrary.org/search/authors.json?q=j+r+r+tolkien').then((response) => response.json().then((data) => { 
+//     console.log("this is a tolkien fetch", data)
+//     let tolkienDataArray = data.docs
+//     tolkienDataArray.forEach(tolkienObj => {
+//         let tolkienObjs = tolkienObj
+//         let author = tolkienObjs.name
+//         console.log("this is author", author)
+//     })
+//     console.log("this is tolkienDataArray", tolkienDataArray)
+// }))
