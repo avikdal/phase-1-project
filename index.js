@@ -9,6 +9,7 @@ let findABookForm = document.querySelector(".find-a-book-form")
 let openingPageButton = document.querySelector("#opening-page-button")
 let homePage = document.querySelector("#home-page")
 let openingPage = document.querySelector("#opening-page")
+let navBar = document.querySelector("#home-page-nav-bar")
 let browseBar = document.querySelector("#browse-options")
 let browseTLOTR = document.querySelector("#TLOTR")
 let browseResult = document.querySelector("#browse-result")
@@ -53,14 +54,13 @@ browseBar.addEventListener('change', (e) => {
     
 })
 
-myBooksList.addEventListener('click',)
+myBooksList.addEventListener('mouseover', goToBookList)
 
 function unhideHome(e){
     e.preventDefault()
     homePage.classList.remove("hidden")
     openingPage.classList.add("hidden")
 }
-
 
 function makeBook(obj){
     // console.log("this is the makeBook cb", obj)
