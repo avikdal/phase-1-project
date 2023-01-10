@@ -8,60 +8,74 @@ let myBooksNavBar = document.querySelector(".my-books-page-nav-bar")
 let browseBar = document.querySelector(".browse-options")
 let browseResult = document.querySelector("#browse-result")
 let harryPotterFetch = fetch('https://legacy--api.herokuapp.com/api/v1/books')
-let myBooksList1 = document.querySelector(".my-books-list-1")
+// let myBooksList1 = document.querySelector(".my-books-list-1")
 let myBooksContainer = document.querySelector("#my-books-container")
-let browseToHomeBtn = document.querySelector("#browse-to-home")
-let booksToHomeBtn = document.querySelector("#books-to-home")
+// let browseToHomeBtn = document.querySelector("#browse-to-home")
+let booksToBrowseBtn = document.querySelector("#books-to-browse")
 let browseToMyBooks = document.querySelector("#browse-to-my-books")
+
+document.addEventListener('DOMContentLoaded', () => {
 
 openingPageMouseOver.addEventListener('mouseover', unhideHome)
 
 
-browseBar.addEventListener('change', (e) => {
-    e.preventDefault();
-    // console.log("this is the event", e)
+// browseBar.addEventListener('change', (e) => {
+//     e.preventDefault();
+//     // console.log("this is the event", e)
 
-    bigContainer.classList.add("hidden")
-    homePage.classList.add("hidden")
+//     bigContainer.classList.add("hidden")
+//     homePage.classList.add("hidden")
+//     browseResult.classList.remove("hidden")
+
+//     harryPotterFetch.then((response) => response.json()).then((data) => {
+//         console.log("this is HPfetch", data)
+//         let HPArray = data
+//         HPArray.forEach(makeBook)
+//     }).catch((error) => { alert("whoops, try again");
+//     document.querySelector('body').append(error.message);
+//     })
+    
+// })
+
+// myBooksList1.addEventListener('click', unhideMyBooks)
+
+// browseToHomeBtn.addEventListener('click', goBackHome)
+browseToMyBooks.addEventListener('click', unhideMyBooks)
+booksToBrowseBtn.addEventListener('click', goBackToBrowse)
+})
+
+function unhideHome(e){
+    e.preventDefault()
+    // homePage.classList.remove("hidden")
+    openingPage.classList.add("hidden")
     browseResult.classList.remove("hidden")
+    bigContainer.classList.add("hidden")
 
     harryPotterFetch.then((response) => response.json()).then((data) => {
-        // console.log("this is HPfetch", data)
+        console.log("this is HPfetch", data)
         let HPArray = data
         HPArray.forEach(makeBook)
     }).catch((error) => { alert("whoops, try again");
     document.querySelector('body').append(error.message);
     })
-    //how do i reset my browse bar drop down
-})
-
-myBooksList1.addEventListener('click', unhideMyBooks)
-
-browseToHomeBtn.addEventListener('click', goBackHome)
-browseToMyBooks.addEventListener('click', unhideMyBooks)
-booksToHomeBtn.addEventListener('click', goBackHome)
-
-function unhideHome(e){
-    e.preventDefault()
-    homePage.classList.remove("hidden")
-    openingPage.classList.add("hidden")
 }
 
-function goBackHome(e){
+function goBackToBrowse(e){
     e.preventDefault()
-    homePage.classList.remove("hidden")
-    browseResult.classList.add("hidden")
-    bigContainer.classList.remove("hidden")
+    // homePage.classList.remove("hidden")
+    browseResult.classList.remove("hidden")
+    // bigContainer.classList.remove("hidden")
 }
 
 function unhideMyBooks(e){
-    e.preventDefault();
-    // openingPage.classList.add("hidden")
-    homePage.classList.add("hidden")
-    myBooksContainer.classList.remove("hidden")
-    // myBooksContainer.textContent += "Looks like you should add some books"
-    bigContainer.classList.add("hidden")
+    e.preventDefault()
     browseResult.classList.add("hidden")
+    myBooksContainer.classList.remove("hidden")
+    
+    // openingPage.classList.add("hidden")
+    // homePage.classList.add("hidden")
+    // myBooksContainer.textContent += "Looks like you should add some books"
+    // bigContainer.classList.add("hidden")
 }
 
 function makeBook(obj){
