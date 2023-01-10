@@ -43,7 +43,8 @@ h3 {
   justify-content: center;
   align-items: center;
   color: black;
-  /* padding-inline-start: 5vw; */
+  padding-top: 10px;
+  font-size: 16px;
 }
 
 .browse-page-nav-bar {
@@ -52,6 +53,7 @@ h3 {
   align-items: center;
   color: black;
   padding-inline-start: 5vw;
+  font-size: 16px;
 }
 
 .browse-page {
@@ -64,6 +66,7 @@ h3 {
   align-items: center;
   color: black;
   padding-inline-start: 5vw;
+  font-size: 16px;
 }
 
 .home-page-nav-list {
@@ -71,6 +74,7 @@ h3 {
   color: black;
   /* padding-inline-start: 5vw; */
   padding-inline-end: 5vw;
+  font-size: 16px;
 }
 
 .book-card {
@@ -85,4 +89,16 @@ h3 {
 
 .book-covers {
   width: 500px
+}
+
+.my-books-list-1{
+  background-color: #4CAF50; 
+  border: none;
+  color: white;
+  padding: 2px 5px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  
 }
