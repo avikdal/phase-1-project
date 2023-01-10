@@ -19,6 +19,8 @@ html, body {
 
 h1 {
   color: rgb(0, 140, 255);
+  text-align: center;
+  position: relative;
 }
 
 h3 {
