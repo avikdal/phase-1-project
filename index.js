@@ -1,7 +1,6 @@
 let bigContainer = document.querySelector(".big-container")
 let openingPage = document.querySelector("#opening-page")
 let openingPageMouseOver = document.querySelector("#opening-page-btn")
-let homePage = document.querySelector("#home-page")
 let homeNavBar = document.querySelector(".home-page-nav-bar")
 let browseNavBar = document.querySelector(".browse-page-nav-bar")
 let myBooksNavBar = document.querySelector(".my-books-page-nav-bar")
@@ -18,35 +17,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
 openingPageMouseOver.addEventListener('mouseover', unhideHome)
 
-
-// browseBar.addEventListener('change', (e) => {
-//     e.preventDefault();
-//     // console.log("this is the event", e)
-
-//     bigContainer.classList.add("hidden")
-//     homePage.classList.add("hidden")
-//     browseResult.classList.remove("hidden")
-
-//     harryPotterFetch.then((response) => response.json()).then((data) => {
-//         console.log("this is HPfetch", data)
-//         let HPArray = data
-//         HPArray.forEach(makeBook)
-//     }).catch((error) => { alert("whoops, try again");
-//     document.querySelector('body').append(error.message);
-//     })
-    
-// })
-
-// myBooksList1.addEventListener('click', unhideMyBooks)
-
-// browseToHomeBtn.addEventListener('click', goBackHome)
 browseToMyBooks.addEventListener('click', unhideMyBooks)
 booksToBrowseBtn.addEventListener('click', goBackToBrowse)
 })
 
 function unhideHome(e){
     e.preventDefault()
-    // homePage.classList.remove("hidden")
     openingPage.classList.add("hidden")
     browseResult.classList.remove("hidden")
     bigContainer.classList.add("hidden")
@@ -62,7 +38,6 @@ function unhideHome(e){
 
 function goBackToBrowse(e){
     e.preventDefault()
-    // homePage.classList.remove("hidden")
     browseResult.classList.remove("hidden")
     // bigContainer.classList.remove("hidden")
 }
@@ -73,7 +48,6 @@ function unhideMyBooks(e){
     myBooksContainer.classList.remove("hidden")
     
     // openingPage.classList.add("hidden")
-    // homePage.classList.add("hidden")
     // myBooksContainer.textContent += "Looks like you should add some books"
     // bigContainer.classList.add("hidden")
 }
@@ -119,7 +93,28 @@ function addToMyBooks(e){
     myBooksContainer.append(likedBookCard)
 }
 
-//find btn to remove and hide it
+
+// browseBar.addEventListener('change', (e) => {
+//     e.preventDefault();
+//     // console.log("this is the event", e)
+
+//     bigContainer.classList.add("hidden")
+//     homePage.classList.add("hidden")
+//     browseResult.classList.remove("hidden")
+
+//     harryPotterFetch.then((response) => response.json()).then((data) => {
+//         console.log("this is HPfetch", data)
+//         let HPArray = data
+//         HPArray.forEach(makeBook)
+//     }).catch((error) => { alert("whoops, try again");
+//     document.querySelector('body').append(error.message);
+//     })
+    
+// }) end of browseBar event listener
+
+// myBooksList1.addEventListener('click', unhideMyBooks)
+
+// browseToHomeBtn.addEventListener('click', goBackHome)
 
 // let hidebtn = document.querySelector(".hide")
 // let unhidebtn = document.querySelector(".unhide")
