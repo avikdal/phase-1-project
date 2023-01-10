@@ -1,17 +1,11 @@
 let bigContainer = document.querySelector(".big-container")
 let openingPage = document.querySelector("#opening-page")
 let openingPageMouseOver = document.querySelector("#opening-page-btn")
-let homeNavBar = document.querySelector(".home-page-nav-bar")
-let browseNavBar = document.querySelector(".browse-page-nav-bar")
-let myBooksNavBar = document.querySelector(".my-books-page-nav-bar")
-let browseBar = document.querySelector(".browse-options")
 let browseResult = document.querySelector("#browse-result")
-let harryPotterFetch = fetch('https://legacy--api.herokuapp.com/api/v1/books')
-// let myBooksList1 = document.querySelector(".my-books-list-1")
 let myBooksContainer = document.querySelector("#my-books-container")
-// let browseToHomeBtn = document.querySelector("#browse-to-home")
 let booksToBrowseBtn = document.querySelector("#books-to-browse")
 let browseToMyBooks = document.querySelector("#browse-to-my-books")
+let harryPotterFetch = fetch('https://legacy--api.herokuapp.com/api/v1/books')
 
 document.addEventListener('DOMContentLoaded', () => {
 
@@ -39,17 +33,12 @@ function unhideHome(e){
 function goBackToBrowse(e){
     e.preventDefault()
     browseResult.classList.remove("hidden")
-    // bigContainer.classList.remove("hidden")
 }
 
 function unhideMyBooks(e){
     e.preventDefault()
     browseResult.classList.add("hidden")
     myBooksContainer.classList.remove("hidden")
-    
-    // openingPage.classList.add("hidden")
-    // myBooksContainer.textContent += "Looks like you should add some books"
-    // bigContainer.classList.add("hidden")
 }
 
 function makeBook(obj){
@@ -93,7 +82,7 @@ function addToMyBooks(e){
     myBooksContainer.append(likedBookCard)
 }
 
-
+// let browseBar = document.querySelector(".browse-options")
 // browseBar.addEventListener('change', (e) => {
 //     e.preventDefault();
 //     // console.log("this is the event", e)
