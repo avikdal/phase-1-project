@@ -40,14 +40,14 @@ h3 {
   display: none;
 }
 
-.home-page-nav-bar {
+/* .home-page-nav-bar {
   display: flex;
   justify-content: center;
   align-items: center;
   color: black;
   padding-top: 10px;
   font-size: 16px;
-}
+} */
 
 .browse-page-nav-bar {
   display: flex;
@@ -68,14 +68,6 @@ h3 {
   align-items: center;
   color: black;
   padding-inline-start: 5vw;
-  font-size: 16px;
-}
-
-.home-page-nav-list {
-  display: inline;
-  color: black;
-  /* padding-inline-start: 5vw; */
-  padding-inline-end: 5vw;
   font-size: 16px;
 }
 

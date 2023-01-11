@@ -33,6 +33,7 @@ function unhideHome(e){
 function goBackToBrowse(e){
     e.preventDefault()
     browseResult.classList.remove("hidden")
+    myBooksContainer.classList.add("hidden")
 }
 
 function unhideMyBooks(e){
