@@ -40,14 +40,6 @@ h3 {
   display: none;
 }
 
-/* .home-page-nav-bar {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: black;
-  padding-top: 10px;
-  font-size: 16px;
-} */
 
 .browse-page-nav-bar {
   display: flex;
@@ -73,7 +65,9 @@ h3 {
 
 .book-card {
   padding-top: 10px;
-  padding-left: 400px;
+  padding-left: 500px;
+  justify-content: center;
+  align-items: center;
 }
 
 .book-covers-div {
@@ -82,7 +76,7 @@ h3 {
 }
 
 .book-covers {
-  width: 500px
+  width: 450px
 }
 
 #browse-to-my-books{
