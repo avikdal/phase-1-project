@@ -93,7 +93,7 @@ h3 {
   width: 500px
 }
 
-.my-books-list-1{
+#browse-to-my-books{
   background-color: #4CAF50; 
   border: none;
   color: white;
@@ -102,5 +102,15 @@ h3 {
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
-  
+}
+
+#books-to-browse {
+  background-color: #4CAF50; 
+  border: none;
+  color: white;
+  padding: 2px 5px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
 }
