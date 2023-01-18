@@ -76,8 +76,11 @@ function makeBook(obj){
 }
 
 function addToMyBooks(e){
-    // console.log("this is the event", e)
-    let likedBookCard = e.path[1]
+    console.log("this is the event", e)
+    console.log(e.srcElement) 
+    let likedBookCard = e.srcElement.parentElement
+    // let likedBookCard = e.path[1]
+    console.log(likedBookCard)
     likedBtn= likedBookCard.childNodes[3]
     likedBtn.classList.add("hidden")
     myBooksContainer.append(likedBookCard)
